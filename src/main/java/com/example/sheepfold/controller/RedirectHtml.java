@@ -91,6 +91,12 @@ public class RedirectHtml {
         logger.info("==========discount.JSP加载");
         return "discount";
     }
+
+    @GetMapping("Index/index1")
+    public String index1() {
+        logger.info("==========index1.JSP加载");
+        return "index1";
+    }
 //
 //    @Autowired
 //    private UserService userService;
