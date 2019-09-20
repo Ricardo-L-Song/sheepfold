@@ -40,19 +40,19 @@ public class HelloController {
         Map m2_1=new HashMap();
         m2_1.put("text","问卷管理");
         m2_1.put("icon","&#xe621;");
-        m2_1.put("href","http://localhost:8089/Index/survey");
+        m2_1.put("href", "http://localhost:8777/Index/survey");
         Map m2_2=new HashMap();
         m2_2.put("text","问题管理");
         m2_2.put("icon","&#xe621;");
-        m2_2.put("href","http://localhost:8089/Index/manager");
+        m2_2.put("href", "http://localhost:8777/Index/manager");
         Map m2_3=new HashMap();
         m2_3.put("text","折线图");
         m2_3.put("icon","&#xe621;");
-        m2_3.put("href","http://localhost:8089/Index/brokenline");
+        m2_3.put("href", "http://localhost:8777/Index/brokenline");
         Map m2_4=new HashMap();
         m2_4.put("text","词云");
         m2_4.put("icon","&#xe621;");
-        m2_4.put("href","http://localhost:8089/Index/namecloud");
+        m2_4.put("href", "http://localhost:8777/Index/namecloud");
         mapList.add(m2_1);
         mapList.add(m2_2);
         mapList.add(m2_3);
@@ -65,7 +65,7 @@ public class HelloController {
         Map m1_1=new HashMap();
         m1_1.put("text","分析概览");
         m1_1.put("icon","&#xe621;");
-        m1_1.put("href","http://localhost:8089/Index/welcome");
+        m1_1.put("href", "http://localhost:8777/Index/welcome");
         mapList1.add(m1_1);
 
         Map m1= new HashMap();//存放概览

@@ -2,8 +2,6 @@ package com.example.sheepfold.util;
 
 
 
-import com.example.sheepfold.model.Psg;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,21 +31,6 @@ public class Api {
         return map;
     }
 
-    public Map<String,Object> returnJson(int code, String msg, Psg data){
-        Map map=new HashMap();
-        map.put("code",code);
-        map.put("msg",msg);
-        map.put("data",data);
-        return map;
-    }
-
-    public Map<String,Object> returnJson1(int code, String msg, List<Psg> data){
-        Map map=new HashMap();
-        map.put("code",code);
-        map.put("msg",msg);
-        map.put("data",data);
-        return map;
-    }
 
     public Map<String,Object> returnJson(int code, String msg, String data){
         Map map=new HashMap();
