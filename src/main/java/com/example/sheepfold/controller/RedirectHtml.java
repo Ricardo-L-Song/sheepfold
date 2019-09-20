@@ -38,18 +38,6 @@ public class RedirectHtml {
     }
 
 
-    @GetMapping("Index/brokenline")
-    public String brokenline(){
-        logger.info("==========brokenline.JSP加载");
-        return "brokenline";
-    }
-
-    @GetMapping("Index/namecloud")
-    public String namecloud(){
-        logger.info("==========namecloud.JSP加载");
-        return "namecloud";
-    }
-
     @GetMapping("/login")
     public String login(){
         logger.info("==========login.JSP加载");
@@ -60,6 +48,48 @@ public class RedirectHtml {
     public String welcome(){
         logger.info("==========welcome.JSP加载");
         return "welcome";
+    }
+
+    @GetMapping("Index/account")
+    public String account() {
+        logger.info("==========account.JSP加载");
+        return "account";
+    }
+
+    @GetMapping("Index/lion")
+    public String lion() {
+        logger.info("==========lion.JSP加载");
+        return "lion";
+    }
+
+    @GetMapping("Index/scene")
+    public String scene() {
+        logger.info("==========scene.JSP加载");
+        return "scene";
+    }
+
+    @GetMapping("Index/props")
+    public String props() {
+        logger.info("==========props.JSP加载");
+        return "props";
+    }
+
+    @GetMapping("Index/task")
+    public String task() {
+        logger.info("==========task.JSP加载");
+        return "task";
+    }
+
+    @GetMapping("Index/action")
+    public String action() {
+        logger.info("==========action.JSP加载");
+        return "action";
+    }
+
+    @GetMapping("Index/discount")
+    public String discount() {
+        logger.info("==========discount.JSP加载");
+        return "discount";
     }
 //
 //    @Autowired
