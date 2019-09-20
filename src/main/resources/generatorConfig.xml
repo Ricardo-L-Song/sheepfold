@@ -27,9 +27,9 @@
         <!--jdbc的数据库连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://47.106.104.241:3306/tp5?characterEncoding=utf-8"
-                userId="tp5"
-                password="Wo1234567">
+                connectionURL="jdbc:mysql://47.106.104.241:3306/young?characterEncoding=utf-8"
+                userId="young"
+                password="Wo123456">
         </jdbcConnection>
 
 
