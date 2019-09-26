@@ -11,10 +11,24 @@
             <arg column="DISCOUNT_TITLE" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="DISCOUNT_START_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
             <arg column="DISCOUNT_END_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="DISCOUNT_LOGO" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="DISCOUNT_TYPE" jdbcType="DECIMAL" javaType="java.math.BigDecimal"/>
             <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
             <arg column="LST_UPD_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
             <arg column="REC_STATUS" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="DISCOUNT_LEFT" jdbcType="VARCHAR" javaType="java.lang.String"/>
         </constructor>
     </resultMap>
+    <sql id="Base_Column_List">
+    DISCOUNT_ID, ACCOUNT_ID, DISCOUNT_TITLE, DISCOUNT_START_DATE, DISCOUNT_END_DATE, DISCOUNT_LOGO, DISCOUNT_TYPE, CREATE_TIME,LST_UPD_TIME,REC_STATUS,DISCOUNT_LEFT
+  </sql>
+
+    <select id="selectDiscountByType" resultMap="BaseResultMap" resultType="java.util.List"
+            parameterType="com.example.sheepfold.model.Discount">
+        select
+        <include refid="Base_Column_List"/>
+        from DISCOUNT
+        where DISCOUNT_TYPE = #{discountType,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

@@ -36,7 +36,13 @@ public class HelloController {
         List<Map<String,Object>> totalList=new ArrayList();//存放一级标题
         List<Map<String,Object>> mapList=new ArrayList();//存放二级标题
         List<Map<String,Object>> mapList1=new ArrayList();//存放二级标题
+        List<Map<String, Object>> mapList3 = new ArrayList();//存放二级标题
+        List<Map<String, Object>> mapList4 = new ArrayList();//存放二级标题
 
+        Map m2 = new HashMap();//游戏运营管理菜单
+        m2.put("text", "游戏运营管理");
+        m2.put("icon", "&#xe620;");
+        m2.put("subset", mapList);
         Map m2_1=new HashMap();
         m2_1.put("text", "账户管理");
         m2_1.put("icon","&#xe621;");
@@ -54,7 +60,7 @@ public class HelloController {
         m2_4.put("icon","&#xe621;");
         m2_4.put("href", "http://localhost:8777/Index/props");
         Map m2_5 = new HashMap();
-        m2_5.put("text", "任务管理");
+        m2_5.put("text", "活动管理");
         m2_5.put("icon", "&#xe621;");
         m2_5.put("href", "http://localhost:8777/Index/task");
         Map m2_6 = new HashMap();
@@ -62,9 +68,17 @@ public class HelloController {
         m2_6.put("icon", "&#xe621;");
         m2_6.put("href", "http://localhost:8777/Index/action");
         Map m2_7 = new HashMap();
-        m2_7.put("text", "优惠券管理");
+        m2_7.put("text", "奖励管理");
         m2_7.put("icon", "&#xe621;");
         m2_7.put("href", "http://localhost:8777/Index/discount");
+        Map m2_8 = new HashMap();
+        m2_8.put("text", "用户分群");
+        m2_8.put("icon", "&#xe621;");
+        m2_8.put("href", "http://localhost:8777/Index/discount");
+        Map m2_9 = new HashMap();
+        m2_9.put("text", "任务管理");
+        m2_9.put("icon", "&#xe621;");
+        m2_9.put("href", "http://localhost:8777/Index/task");
         mapList.add(m2_1);
         mapList.add(m2_2);
         mapList.add(m2_3);
@@ -72,35 +86,109 @@ public class HelloController {
         mapList.add(m2_5);
         mapList.add(m2_6);
         mapList.add(m2_7);
+        mapList.add(m2_8);
 
-        Map m2 = new HashMap();//存放任务管理
-        m2.put("text", "游戏运营");
-        m2.put("icon","&#xe620;");
-        m2.put("subset",mapList);
 
+        Map m1 = new HashMap();//用户行为数据分析菜单
+        m1.put("text", "用户行为数据分析");
+        m1.put("icon", "&#xe620;");
+        m1.put("subset", mapList1);
         Map m1_1=new HashMap();
         m1_1.put("text", "留存分析");
         m1_1.put("icon","&#xe621;");
-        m1_1.put("href", "http://localhost:8777/Index/welcome");
+        m1_1.put("href", "http://localhost:8777/Index/welcome1");
         mapList1.add(m1_1);
 
         Map m1_2 = new HashMap();
-        m1_2.put("text", "漏斗分析");
+        m1_2.put("text", "流量漏斗分析");
         m1_2.put("icon", "&#xe621;");
-        m1_2.put("href", "http://localhost:8777/Index/welcome");
+        m1_2.put("href", "http://localhost:8777/Index/welcome1");
         mapList1.add(m1_2);
 
         Map m1_3 = new HashMap();
-        m1_3.put("text", "用户分群");
+        m1_3.put("text", "用户行为路径分析");
         m1_3.put("icon", "&#xe621;");
-        m1_3.put("href", "http://localhost:8777/Index/welcome");
+        m1_3.put("href", "http://localhost:8777/Index/welcome1");
         mapList1.add(m1_3);
-        Map m1= new HashMap();//存放概览
-        m1.put("text", "用户分析");
-        m1.put("icon","&#xe620;");
-        m1.put("subset",mapList1);
-        totalList.add(m1);//组合一级标题
+
+        Map m1_4 = new HashMap();
+        m1_4.put("text", "转化分析");
+        m1_4.put("icon", "&#xe621;");
+        m1_4.put("href", "http://localhost:8777/Index/welcome1");
+        mapList1.add(m1_4);
+
+        Map m1_5 = new HashMap();
+        m1_5.put("text", "营销事件分析");
+        m1_5.put("icon", "&#xe621;");
+        m1_5.put("href", "http://localhost:8777/Index/welcome1");
+        mapList1.add(m1_5);
+
+
+        Map m3 = new HashMap();//数据指标概览菜单
+        m3.put("text", "数据指标概览");
+        m3.put("icon", "&#xe620;");
+        m3.put("subset", mapList3);
+
+        Map m3_1 = new HashMap();
+        m3_1.put("text", "运营数据概览");
+        m3_1.put("icon", "&#xe621;");
+        m3_1.put("href", "http://localhost:8777/Index/welcome");
+        mapList3.add(m3_1);
+
+        Map m3_2 = new HashMap();
+        m3_2.put("text", "营销数据概览");
+        m3_2.put("icon", "&#xe621;");
+        m3_2.put("href", "http://localhost:8777/Index/yingxiao");
+        mapList3.add(m3_2);
+
+        Map m3_3 = new HashMap();
+        m3_3.put("text", "渠道数据概览");
+        m3_3.put("icon", "&#xe621;");
+        m3_3.put("href", "http://localhost:8777/Index/welcome1");
+        mapList3.add(m3_3);
+
+
+        Map m4 = new HashMap();//数据分析
+        m4.put("text", "数据分析");
+        m4.put("icon", "&#xe620;");
+        m4.put("subset", mapList4);
+
+        Map m4_1 = new HashMap();
+        m4_1.put("text", "用户属性分析");
+        m4_1.put("icon", "&#xe621;");
+        m4_1.put("href", "http://localhost:8777/Index/yonghushuxing");
+        mapList4.add(m4_1);
+
+        Map m4_2 = new HashMap();
+        m4_2.put("text", "流量漏斗分析");
+        m4_2.put("icon", "&#xe621;");
+        m4_2.put("href", "http://localhost:8777/Index/welcome1");
+        mapList4.add(m4_2);
+
+        Map m4_3 = new HashMap();
+        m4_3.put("text", "留存分析");
+        m4_3.put("icon", "&#xe621;");
+        m4_3.put("href", "http://localhost:8777/Index/welcome1");
+        mapList4.add(m4_3);
+
+        Map m4_4 = new HashMap();
+        m4_4.put("text", "用户行为路径分析");
+        m4_4.put("icon", "&#xe621;");
+        m4_4.put("href", "http://localhost:8777/Index/welcome1");
+        mapList4.add(m4_4);
+
+        Map m4_5 = new HashMap();
+        m4_5.put("text", "营销事件分析");
+        m4_5.put("icon", "&#xe621;");
+        m4_5.put("href", "http://localhost:8777/Index/welcome1");
+        mapList4.add(m4_5);
+
+
+
         totalList.add(m2);//组合一级标题
+        totalList.add(m3);//组合一级标题
+        totalList.add(m4);//组合一级标题
+        // totalList.add(m1);//组合一级标题
         Map data=new HashMap();
         data.put("data",totalList);
 

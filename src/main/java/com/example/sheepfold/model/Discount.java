@@ -1,5 +1,7 @@
 package com.example.sheepfold.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -28,14 +30,30 @@ public class Discount {
     /**
      * 优惠券开始使用日期
      */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "DISCOUNT_START_DATE")
     private Date discountStartDate;
 
     /**
      * 优惠券截止使用日期
      */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd  HH:MM:ss")
     @Column(name = "DISCOUNT_END_DATE")
     private Date discountEndDate;
+
+    @Column(name = "DISCOUNT_LOGO")
+    private String discountLogo;
+
+    public String getDiscountLeft() {
+        return discountLeft;
+    }
+
+    public void setDiscountLeft(String discountLeft) {
+        this.discountLeft = discountLeft;
+    }
+
+    @Column(name = "DISCOUNT_LEFT")
+    private String discountLeft;
 
     /**
      * 优惠券种类(对应场景种类)
@@ -52,16 +70,18 @@ public class Discount {
     @Column(name = "REC_STATUS")
     private String recStatus;
 
-    public Discount(String discountId, String accountId, String discountTitle, Date discountStartDate, Date discountEndDate, BigDecimal discountType, Date createTime, Date lstUpdTime, String recStatus) {
+    public Discount(String discountId, String accountId, String discountTitle, Date discountStartDate, Date discountEndDate, String discountLogo, BigDecimal discountType, Date createTime, Date lstUpdTime, String recStatus, String discountLeft) {
         this.discountId = discountId;
         this.accountId = accountId;
         this.discountTitle = discountTitle;
         this.discountStartDate = discountStartDate;
         this.discountEndDate = discountEndDate;
+        this.discountLogo = discountLogo;
         this.discountType = discountType;
         this.createTime = createTime;
         this.lstUpdTime = lstUpdTime;
         this.recStatus = recStatus;
+        this.discountLeft = discountLeft;
     }
 
     public Discount() {
@@ -127,6 +147,7 @@ public class Discount {
      *
      * @return DISCOUNT_START_DATE - 优惠券开始使用日期
      */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd  HH:MM:ss")
     public Date getDiscountStartDate() {
         return discountStartDate;
     }
@@ -136,6 +157,8 @@ public class Discount {
      *
      * @param discountStartDate 优惠券开始使用日期
      */
+
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd  HH:MM:ss")
     public void setDiscountStartDate(Date discountStartDate) {
         this.discountStartDate = discountStartDate;
     }
@@ -145,6 +168,7 @@ public class Discount {
      *
      * @return DISCOUNT_END_DATE - 优惠券截止使用日期
      */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd  HH:MM:ss")
     public Date getDiscountEndDate() {
         return discountEndDate;
     }
@@ -154,8 +178,23 @@ public class Discount {
      *
      * @param discountEndDate 优惠券截止使用日期
      */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd  HH:MM:ss")
     public void setDiscountEndDate(Date discountEndDate) {
         this.discountEndDate = discountEndDate;
+    }
+
+    /**
+     * @return DISCOUNT_LOGO
+     */
+    public String getDiscountLogo() {
+        return discountLogo;
+    }
+
+    /**
+     * @param discountLogo
+     */
+    public void setDiscountLogo(String discountLogo) {
+        this.discountLogo = discountLogo == null ? null : discountLogo.trim();
     }
 
     /**

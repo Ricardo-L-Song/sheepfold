@@ -97,6 +97,19 @@ public class RedirectHtml {
         logger.info("==========index1.JSP加载");
         return "index1";
     }
+
+    @GetMapping("Index/yingxiao")
+    public String yingxiao() {
+        logger.info("==========yingxiao.JSP加载");
+        return "yingxiao";
+    }
+
+
+    @GetMapping("Index/yonghushuxing")
+    public String yonghushuxing() {
+        logger.info("==========yonghushuxing.JSP加载");
+        return "yonghushuxing";
+    }
     //111
 //
 //    @Autowired

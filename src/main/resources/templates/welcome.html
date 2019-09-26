@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="/public/frame/layui/css/layui.css">
     <link rel="stylesheet" href="/public/frame/static/css/style.css">
     <link rel="icon" href="/public/frame/static/image/code.png">
-    <link rel="stylesheet" href="/public/frame/layui/dist/layuiadmin/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="/public/frame/layui/dist/layuiadmin/layui/css/layui.css" media="all">
     <script src="/public/frame/layui/dist/layuiadmin/layui/layui.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/public/frame/layui/dist/layuiadmin/style/admin.css"  media="all">
+    <link rel="stylesheet" href="/public/frame/layui/dist/layuiadmin/style/admin.css" media="all">
 
 
 </head>
@@ -20,97 +20,189 @@
 <!--<body class="body" layadmin-themealias="default">-->
 <body>
 <div class="layui-fluid">
+    <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">查询周期</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" id="time_min" name="time_min" placeholder="2019-09-17" autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" id="time_max" name="time_max" placeholder="2019-09-24" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn layuiadmin-btn-admin" style="background-color: #4E5465" lay-submit=""
+                        id="unionSearch" lay-filter="LAY-user-back-search">
+                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="layui-row layui-col-space15">
         <div class="layui-col-sm6 layui-col-md3">
             <!--<div style="padding: 20px; background-color: #F2F2F2;">-->
             <div class="layui-card">
                 <div class="layui-card-header">
-                    访问量
-                    <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
-                </div>
-                <div class="layui-card-body layuiadmin-card-list">
-                    <p class="layuiadmin-big-font">9,999,666</p>
-                    <p>
-                        总计访问量
-                        <span class="layuiadmin-span-color">88万 <i class="layui-inline layui-icon layui-icon-flag"></i></span>
-                    </p>
-                </div>
-            </div>
-        <!--</div>-->
-        </div>
-        <div class="layui-col-sm6 layui-col-md3">
-
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    注册量
+                    今日|累计新增用户量
                     <span class="layui-badge layui-bg-cyan layuiadmin-badge">日</span>
                 </div>
                 <div class="layui-card-body layuiadmin-card-list">
-                    <p class="layuiadmin-big-font">33,555</p>
+                    <p id="date1">2019-09-11~2019-08-11</p>
+                    <p>合计:</p>
+                    <p class="layuiadmin-big-font">1,666</p>
                     <p>
-                        新注册
-                        <span class="layuiadmin-span-color">10% <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                        环比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        6.92%
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        同比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        4.92%
                     </p>
                 </div>
-
-        </div>
+            </div>
+            <!--</div>-->
         </div>
         <div class="layui-col-sm6 layui-col-md3">
 
             <div class="layui-card">
                 <div class="layui-card-header">
-                    优惠券使用量
-                    <span class="layui-badge layui-bg-green layuiadmin-badge">日</span>
+                    今日|累计日活跃用户数
+                    <span class="layui-badge layui-bg-cyan layuiadmin-badge">日</span>
                 </div>
                 <div class="layui-card-body layuiadmin-card-list">
-
-                    <p class="layuiadmin-big-font">999,666</p>
+                    <p id="date2">2019-09-11~2019-08-11</p>
+                    <p>合计:</p>
+                    <p class="layuiadmin-big-font">1,666</p>
                     <p>
-                        总使用量
-                        <span class="layuiadmin-span-color">*** <i class="layui-inline layui-icon layui-icon-dollar"></i></span>
+                        环比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        5.13%
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        同比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        3.97%
                     </p>
                 </div>
 
-        </div>
+            </div>
         </div>
         <div class="layui-col-sm6 layui-col-md3">
 
             <div class="layui-card">
                 <div class="layui-card-header">
-                    活跃用户
-                    <span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>
+                    30日|累计新增用户数
+                    <span class="layui-badge layui-bg-blue layuiadmin-badge">月</span>
                 </div>
                 <div class="layui-card-body layuiadmin-card-list">
-
-                    <p class="layuiadmin-big-font">66,666</p>
+                    <p id="date3">2019-09-11~2019-08-11</p>
+                    <p>合计:</p>
+                    <p class="layuiadmin-big-font">1,666</p>
                     <p>
-                        最近一个月
-                        <span class="layuiadmin-span-color">15% <i class="layui-inline layui-icon layui-icon-user"></i></span>
+                        环比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        4.32%
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        同比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        3.18%
                     </p>
                 </div>
 
+            </div>
         </div>
+        <div class="layui-col-sm6 layui-col-md3">
+
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    30日|累计活跃用户数
+                    <span class="layui-badge layui-bg-blue layuiadmin-badge">月</span>
+                </div>
+                <div class="layui-card-body layuiadmin-card-list">
+                    <p id="date4">2019-09-11~2019-08-11</p>
+                    <p>合计:</p>
+                    <p class="layuiadmin-big-font">1,666</p>
+                    <p>
+                        环比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        2.21%
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        同比:
+                        <span> <img src="/public/frame/static/image/shangsheng.png" alt="logo"></span>
+                        1.93%
+                    </p>
+                    <!--<p>-->
+                    <!--最近一个月-->
+                    <!--<span class="layuiadmin-span-color">15% <i class="layui-inline layui-icon layui-icon-user"></i></span>-->
+                    <!--</p>-->
+                </div>
+
+            </div>
+        </div>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-sm6 layui-col-md5" style="height: 460px;width: 550px">
+                <div class="layui-card">
+                    <div class="layui-card-header"><span class="layui-badge layui-bg-cyan" style="font-size: medium">7日|用户新增趋势及比较</span>
+                    </div>
+                    <div class="layui-card-body">
+                        <iframe
+                                width="450"
+                                height="300"
+                                seamless
+                                frameBorder="0"
+                                scrolling="no"
+                                src="http://47.106.104.241:8088/superset/explore/?form_data=%7B%22datasource%22%3A%2213__table%22%2C%22viz_type%22%3A%22line%22%2C%22slice_id%22%3A80%2C%22url_params%22%3A%7B%7D%2C%22granularity_sqla%22%3A%22DayLiveDate%22%2C%22time_grain_sqla%22%3A%22P1D%22%2C%22time_range%22%3A%222019-10-01+%3A+2019-10-07%22%2C%22metrics%22%3A%5B%7B%22expressionType%22%3A%22SIMPLE%22%2C%22column%22%3A%7B%22id%22%3A445%2C%22column_name%22%3A%22%E6%97%A5%E5%A2%9E%22%2C%22verbose_name%22%3Anull%2C%22description%22%3Anull%2C%22expression%22%3A%22%22%2C%22filterable%22%3Atrue%2C%22groupby%22%3Atrue%2C%22is_dttm%22%3Afalse%2C%22type%22%3A%22VARCHAR%28255%29%22%2C%22database_expression%22%3Anull%2C%22python_date_format%22%3Anull%2C%22optionName%22%3A%22_col_%E6%97%A5%E5%A2%9E%22%7D%2C%22aggregate%22%3A%22MAX%22%2C%22sqlExpression%22%3Anull%2C%22hasCustomLabel%22%3Afalse%2C%22fromFormData%22%3Atrue%2C%22label%22%3A%22MAX%28%E6%97%A5%E5%A2%9E%29%22%2C%22optionName%22%3A%22metric_pd63kotvxj9_a159o0fcekk%22%7D%5D%2C%22adhoc_filters%22%3A%5B%5D%2C%22groupby%22%3A%5B%5D%2C%22timeseries_limit_metric%22%3Anull%2C%22order_desc%22%3Atrue%2C%22contribution%22%3Afalse%2C%22row_limit%22%3A10000%2C%22color_scheme%22%3A%22d3Category20b%22%2C%22show_brush%22%3A%22auto%22%2C%22send_time_range%22%3Afalse%2C%22show_legend%22%3Atrue%2C%22rich_tooltip%22%3Atrue%2C%22show_markers%22%3Afalse%2C%22line_interpolation%22%3A%22basis%22%2C%22x_axis_label%22%3A%22%E6%97%A5%E6%9C%9F%22%2C%22bottom_margin%22%3A%22auto%22%2C%22x_ticks_layout%22%3A%22auto%22%2C%22x_axis_format%22%3A%22%25d%2F%25m%2F%25Y%22%2C%22x_axis_showminmax%22%3Afalse%2C%22y_axis_label%22%3A%22%E6%95%B0%E9%87%8F%22%2C%22left_margin%22%3A%22auto%22%2C%22y_axis_showminmax%22%3Afalse%2C%22y_log_scale%22%3Afalse%2C%22y_axis_format%22%3A%22.3s%22%2C%22y_axis_bounds%22%3A%5Bnull%2Cnull%5D%2C%22rolling_type%22%3A%22None%22%2C%22time_compare%22%3A%5B%221+week%22%5D%2C%22comparison_type%22%3A%22values%22%2C%22resample_how%22%3Anull%2C%22resample_rule%22%3Anull%2C%22resample_fillmethod%22%3Anull%2C%22annotation_layers%22%3A%5B%5D%7D&standalone=true&height=300"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm6 layui-col-md5" style="height: 460px;width: 550px">
+                <div class="layui-card">
+                    <div class="layui-card-header"><span class="layui-badge layui-bg-cyan" style="font-size: medium">7日|用户活跃趋势及比较</span>
+                    </div>
+                    <div class="layui-card-body">
+                        <iframe
+                                width="450"
+                                height="300"
+                                seamless
+                                frameBorder="0"
+                                scrolling="no"
+                                src="http://47.106.104.241:8088/superset/explore/?form_data=%7B%22datasource%22%3A%2213__table%22%2C%22viz_type%22%3A%22line%22%2C%22slice_id%22%3A79%2C%22url_params%22%3A%7B%7D%2C%22granularity_sqla%22%3A%22DayLiveDate%22%2C%22time_grain_sqla%22%3A%22P1D%22%2C%22time_range%22%3A%222019-09-24+%3A+2019-10-01%22%2C%22metrics%22%3A%5B%7B%22expressionType%22%3A%22SIMPLE%22%2C%22column%22%3A%7B%22id%22%3A442%2C%22column_name%22%3A%22%E6%97%A5%E6%B4%BB%22%2C%22verbose_name%22%3Anull%2C%22description%22%3Anull%2C%22expression%22%3A%22%22%2C%22filterable%22%3Afalse%2C%22groupby%22%3Afalse%2C%22is_dttm%22%3Afalse%2C%22type%22%3A%22INTEGER%2864%29%22%2C%22database_expression%22%3Anull%2C%22python_date_format%22%3Anull%2C%22optionName%22%3A%22_col_%E6%97%A5%E6%B4%BB%22%7D%2C%22aggregate%22%3A%22MAX%22%2C%22sqlExpression%22%3Anull%2C%22hasCustomLabel%22%3Afalse%2C%22fromFormData%22%3Atrue%2C%22label%22%3A%22MAX%28%E6%97%A5%E6%B4%BB%29%22%2C%22optionName%22%3A%22metric_9j162dc5ep9_cmhhk00jv0n%22%7D%5D%2C%22adhoc_filters%22%3A%5B%5D%2C%22groupby%22%3A%5B%5D%2C%22timeseries_limit_metric%22%3Anull%2C%22order_desc%22%3Atrue%2C%22contribution%22%3Afalse%2C%22row_limit%22%3A10000%2C%22color_scheme%22%3A%22d3Category20b%22%2C%22show_brush%22%3A%22auto%22%2C%22send_time_range%22%3Afalse%2C%22show_legend%22%3Atrue%2C%22rich_tooltip%22%3Atrue%2C%22show_markers%22%3Afalse%2C%22line_interpolation%22%3A%22basis%22%2C%22x_axis_label%22%3A%22%22%2C%22bottom_margin%22%3A%22auto%22%2C%22x_ticks_layout%22%3A%22auto%22%2C%22x_axis_format%22%3A%22smart_date%22%2C%22x_axis_showminmax%22%3Afalse%2C%22y_axis_label%22%3A%22%22%2C%22left_margin%22%3A%22auto%22%2C%22y_axis_showminmax%22%3Afalse%2C%22y_log_scale%22%3Afalse%2C%22y_axis_format%22%3A%22.3s%22%2C%22y_axis_bounds%22%3A%5Bnull%2Cnull%5D%2C%22rolling_type%22%3A%22None%22%2C%22time_compare%22%3A%5B%221+week%22%5D%2C%22comparison_type%22%3A%22values%22%2C%22resample_how%22%3Anull%2C%22resample_rule%22%3Anull%2C%22resample_fillmethod%22%3Anull%2C%22annotation_layers%22%3A%5B%5D%7D&standalone=true&height=300"
+                        >
+                        </iframe>
+                    </div>
+                </div>                <!--</div>-->
+            </div>
+
+
         </div>
         <div class="layui-col-sm12">
 
             <div class="layui-card">
-
                 <div class="layui-card-body">
                     <div class="layui-row">
                         <div class="layui-col-sm8">
-                            <div style="padding: 20px; background-color: #F2F2F2;">
+                            <div style="padding: 20px; background-color: #F2F2F2; width:1000px;">
                                 <div class="layui-row layui-col-space15">
-                                    <div >
-                                        <div class="layui-card">
-                                            <div class="layui-card-header" style="width: 600px">用户分布</div>
+                                    <div>
+                                        <div class="layui-card" style="height:500px;">
+                                            <div class="layui-card-header"><span class="layui-badge layui-bg-cyan"
+                                                                                 style="font-size: medium">7日|用户留存量</span>
+                                            </div>
                                             <div class="layui-card-body">
                                                 <iframe
-                                                        width="600"
-                                                        height="400"
+                                                        width="800"
+                                                        height="600"
                                                         seamless
                                                         frameBorder="0"
                                                         scrolling="no"
-                                                        src="http://47.106.104.241:8088/superset/explore/?form_data=%7B%22datasource%22%3A%222__table%22%2C%22viz_type%22%3A%22world_map%22%2C%22slice_id%22%3A45%2C%22granularity_sqla%22%3A%22year%22%2C%22time_grain_sqla%22%3A%22P1D%22%2C%22time_range%22%3A%222014-01-01+%3A+2014-01-02%22%2C%22entity%22%3A%22country_code%22%2C%22country_fieldtype%22%3A%22cca3%22%2C%22metric%22%3A%22sum__SP_RUR_TOTL_ZS%22%2C%22adhoc_filters%22%3A%5B%5D%2C%22row_limit%22%3A50000%2C%22show_bubbles%22%3Atrue%2C%22secondary_metric%22%3A%22sum__SP_POP_TOTL%22%2C%22max_bubble_size%22%3A%2225%22%7D&standalone=true&height=400"
+                                                        src="http://47.106.104.241:8088/superset/explore/?form_data=%7B%22datasource%22%3A%2213__table%22%2C%22viz_type%22%3A%22line%22%2C%22slice_id%22%3A81%2C%22url_params%22%3A%7B%7D%2C%22granularity_sqla%22%3A%22DayLiveDate%22%2C%22time_grain_sqla%22%3A%22P1D%22%2C%22time_range%22%3A%222019-09-24+%3A+2019-10-01%22%2C%22metrics%22%3A%5B%7B%22expressionType%22%3A%22SIMPLE%22%2C%22column%22%3A%7B%22id%22%3A446%2C%22column_name%22%3A%22%E7%95%99%E5%AD%98%E4%BA%BA%E6%95%B0%22%2C%22verbose_name%22%3Anull%2C%22description%22%3Anull%2C%22expression%22%3A%22%22%2C%22filterable%22%3Atrue%2C%22groupby%22%3Atrue%2C%22is_dttm%22%3Afalse%2C%22type%22%3A%22VARCHAR%28255%29%22%2C%22database_expression%22%3Anull%2C%22python_date_format%22%3Anull%2C%22optionName%22%3A%22_col_%E7%95%99%E5%AD%98%E4%BA%BA%E6%95%B0%22%7D%2C%22aggregate%22%3A%22MAX%22%2C%22sqlExpression%22%3Anull%2C%22hasCustomLabel%22%3Afalse%2C%22fromFormData%22%3Atrue%2C%22label%22%3A%22MAX%28%E7%95%99%E5%AD%98%E4%BA%BA%E6%95%B0%29%22%2C%22optionName%22%3A%22metric_4d9ocpt9424_cwyi6cy3xdl%22%7D%5D%2C%22adhoc_filters%22%3A%5B%5D%2C%22groupby%22%3A%5B%5D%2C%22timeseries_limit_metric%22%3Anull%2C%22order_desc%22%3Atrue%2C%22contribution%22%3Afalse%2C%22row_limit%22%3A10000%2C%22color_scheme%22%3A%22bnbColors%22%2C%22show_brush%22%3A%22auto%22%2C%22send_time_range%22%3Afalse%2C%22show_legend%22%3Atrue%2C%22rich_tooltip%22%3Atrue%2C%22show_markers%22%3Afalse%2C%22line_interpolation%22%3A%22linear%22%2C%22x_axis_label%22%3A%22%E6%97%A5%E6%9C%9F%22%2C%22bottom_margin%22%3A%22auto%22%2C%22x_ticks_layout%22%3A%22auto%22%2C%22x_axis_format%22%3A%22smart_date%22%2C%22x_axis_showminmax%22%3Afalse%2C%22y_axis_label%22%3A%22%E7%95%99%E5%AD%98%E4%BA%BA%E6%95%B0%22%2C%22left_margin%22%3A%22auto%22%2C%22y_axis_showminmax%22%3Afalse%2C%22y_log_scale%22%3Afalse%2C%22y_axis_format%22%3A%22.3s%22%2C%22y_axis_bounds%22%3A%5Bnull%2Cnull%5D%2C%22rolling_type%22%3A%22None%22%2C%22comparison_type%22%3A%22values%22%2C%22resample_how%22%3Anull%2C%22resample_rule%22%3Anull%2C%22resample_fillmethod%22%3Anull%2C%22annotation_layers%22%3A%5B%5D%7D&standalone=true&height=400"
                                                 >
                                                 </iframe>
                                             </div>
@@ -119,61 +211,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="layui-col-sm4">
-                            <div style="padding: 20px; background-color: #F2F2F2;height: 470px" >
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">日访问数:50000人</p>
-                                <span>同昨日增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showpercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="30%" style="width: 30%;"><span class="layui-progress-text">30%</span></div>
-                                </div>
-                                <div style="padding: 10px; background-color: #F2F2F2;">
-                                <svg class="active" data-step="0" width="100" height="44" xmlns="http://www.w3.org/2000/svg">
-                                    <g>
-                                        <g fill="none" fill-rule="evenodd">
-                                            <g fill="#EAEFF4" class="active">
-                                                <polygon points="18,0 82,0 82,20 100,20 50,44 0,20 18,20 " style="stroke-width: 1; stroke: rgba(0,0,0,0.12);"></polygon>
-                                            </g>
-                                        </g>
-                                        <text xml:space="preserve" text-anchor="middle" font-size="14px" id="" y="26" x="48%" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#6666ff" fill="#000000">
-            60%
-          </text>
-                                    </g>
-                                </svg>
-                                </div>
-                            </div>
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">日注册数:30000人</p>
-                                <span>同昨日增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showpercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="20%" style="width: 20%;"><span class="layui-progress-text">20%</span></div>
-                                </div>
 
-                                <div style="padding: 10px; background-color: #F2F2F2;">
-                                    <svg class="active" data-step="0" width="100" height="44" xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <g fill="none" fill-rule="evenodd">
-                                                <g fill="#EAEFF4" class="active">
-                                                    <polygon points="18,0 82,0 82,20 100,20 50,44 0,20 18,20 " style="stroke-width: 1; stroke: rgba(0,0,0,0.12);"></polygon>
-                                                </g>
-                                            </g>
-                                            <text xml:space="preserve" text-anchor="middle" font-size="14px" id="" y="26" x="48%" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#6666ff" fill="#000000">
-            33.3%
-          </text>
-                                        </g>
-                                    </svg>
-                                </div>
-
-                            </div>
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">日优惠券使用量:10000人</p>
-                                <span>同昨日增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showpercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="25%" style="width: 25%;"><span class="layui-progress-text">25%</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -181,8 +219,88 @@
 
     </div>
 </div>
-<style id="LAY_layadmin_theme">.layui-side-menu,.layadmin-pagetabs .layui-tab-title li:after,.layadmin-pagetabs .layui-tab-title li.layui-this:after,.layui-layer-admin .layui-layer-title,.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child{background-color:#20222A !important;}.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a{background-color:#009688 !important;}.layui-layout-admin .layui-logo{background-color:#20222A !important;}</style>
+<style id="LAY_layadmin_theme">.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-item > .layui-nav-child {
+    background-color: #20222A !important;
+}
 
+.layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #009688 !important;
+}
+
+.layui-layout-admin .layui-logo {
+    background-color: #20222A !important;
+}</style>
+<script type="text/javascript" src="/public/frame/layui/layui.js"></script>
+<script type="text/javascript" src="/public/js/index.js"></script>
+<script type="text/javascript" src="/public/frame/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'form', 'table', 'layer', 'vip_table', 'laydate'], function () {
+        var form = layui.form,
+            table = layui.table,
+            layer = layui.layer,
+            vipTable = layui.vip_table,
+            element = layui.element,
+            $ = layui.jquery;
+        var laydate = layui.laydate;
+
+        laydate.render({
+            elem: '#time_min' //指定元素
+        });
+
+        laydate.render({
+            elem: '#time_max' //指定元素
+        });
+        $(function () {
+            //初始化面板日期
+            $('#date1').text(getDay(-7) + "~" + getDay(0));
+            $('#date2').text(getDay(-7) + "~" + getDay(0));
+            $('#date3').text(getDay(-30) + "~" + getDay(0));
+            $('#date4').text(getDay(-30) + "~" + getDay(0));
+        });
+        // function getNowFormatDate() {
+        //     var date = new Date();
+        //     var seperator1 = "-";
+        //     var year = date.getFullYear();
+        //     var month = date.getMonth() + 1;
+        //     var strDate = date.getDate();
+        //     if (month >= 1 && month <= 9) {
+        //         month = "0" + month;
+        //     }
+        //     if (strDate >= 0 && strDate <= 9) {
+        //         strDate = "0" + strDate;
+        //     }
+        //     var currentdate = year + seperator1 + month + seperator1 + strDate;
+        //     return currentdate;
+        // }
+
+        //获取最近7天日期
+        //
+        // getDay(0);//当天日期
+        //
+        // getDay(-7);//7天前日期
+
+        function getDay(day) {
+            var today = new Date();
+            var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+            today.setTime(targetday_milliseconds); //注意，这行是关键代码
+            var tYear = today.getFullYear();
+            var tMonth = today.getMonth();
+            var tDate = today.getDate();
+            tMonth = doHandleMonth(tMonth + 1);
+            tDate = doHandleMonth(tDate);
+            return tYear + "-" + tMonth + "-" + tDate;
+        }
+
+        function doHandleMonth(month) {
+            var m = month;
+            if (month.toString().length == 1) {
+                m = "0" + month;
+            }
+            return m;
+
+        }
+    });
+</script>
 </body>
 
 </html>
